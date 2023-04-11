@@ -118,7 +118,6 @@ int main(int argc, char *argv[]) {
         std::cout << "Failed to open data file!" << std::endl;
         return -1;
     }
-
     // 检查处理时间
     // check process time
     if (endtime < 0) {
