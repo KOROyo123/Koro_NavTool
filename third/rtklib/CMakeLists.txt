@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(rtklib LANGUAGES C)
+project(rtklib LANGUAGES CXX)
 
 add_definitions(-D_RTLDLL -DNO_STRICT -DTRACE -DENAGLO -DENAQZS -DENAGAL -DENACMP -DENAIRN -DNFREQ=3 -DNEXOBS=3 -DEXTLEX -DQT)
 
