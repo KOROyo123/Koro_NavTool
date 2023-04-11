@@ -1,0 +1,7 @@
+linux
+/home/koro/Desktop/Koro_NavData/KF-GINS/
+-in tcpcli://49.234.134.179:10003 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
+
+
+windows
+-k C:/Koro_NavData/rtklib/test.conf -o C:/Koro_NavData/rtklib/result.pos C:/Koro_NavData/rtklib/SK03.obs C:/Koro_NavData/rtklib/SK01.obs C:/Koro_NavData/rtklib/SK03.nav
