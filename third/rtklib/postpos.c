@@ -1271,7 +1271,7 @@ extern int postpos(gtime_t ts, gtime_t te, double ti, double tu,
         /* execute processing session */
         stat=execses_b(ts,te,ti,popt,sopt,fopt,1,ifile,index,n,ofile,rov,
                        base);
-        
+
         for (i=0;i<n&&i<MAXINFILE;i++) free(ifile[i]);
     }
     else {

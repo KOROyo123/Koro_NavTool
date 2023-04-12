@@ -1,27 +1,12 @@
-/*------------------------------------------------------------------------------
-* rnx2rtkp.c : read rinex obs/nav files and compute receiver positions
-*
-*          Copyright (C) 2007-2016 by T.TAKASU, All rights reserved.
-*
-* version : $Revision: 1.1 $ $Date: 2008/07/17 21:55:16 $
-* history : 2007/01/16  1.0 new
-*           2007/03/15  1.1 add library mode
-*           2007/05/08  1.2 separate from postpos.c
-*           2009/01/20  1.3 support rtklib 2.2.0 api
-*           2009/12/12  1.4 support glonass
-*                           add option -h, -a, -l, -x
-*           2010/01/28  1.5 add option -k
-*           2010/08/12  1.6 add option -y implementation (2.4.0_p1)
-*           2014/01/27  1.7 fix bug on default output time format
-*           2015/05/15  1.8 -r or -l options for fixed or ppp-fixed mode
-*           2015/06/12  1.9 output patch level in header
-*           2016/09/07  1.10 add option -sys
-*-----------------------------------------------------------------------------*/
+#include <iostream>
 #include <stdarg.h>
 #include "rtklib.h"
+#include <Eigen/Dense>
+#include <yaml-cpp/yaml.h>
 
 #define PROGNAME    "rnx2rtkp"          /* program name */
 #define MAXFILE     16                  /* max number of input files */
+
 
 /* help text -----------------------------------------------------------------*/
 static const char *help[]={
@@ -90,9 +75,21 @@ static void printhelp(void)
     for (i=0;i<(int)(sizeof(help)/sizeof(*help));i++) fprintf(stderr,"%s\n",help[i]);
     exit(0);
 }
+
 /* rnx2rtkp main -------------------------------------------------------------*/
 int main(int argc, char **argv)
 {
+//————————————————————————————————————————————————————————————————————————————————————————
+    //无法理解，原始的rnx2rtkp.c文件在windows下编译构建的程序在执行完getsysopts(&prcopt,&solopt,&filopt)函数后，argc和argv都会被清空
+    //在使用测试模板 复制生成代码后，发现可以正常运行，但是把测试的一些函数清空后，又出现同样的状况，tmd无法理解
+    //rtklib
+    double rtklibtest=timeget().sec;
+    //eigen
+     Eigen::MatrixXd eigentest;
+    //yaml
+    YAML::Node yamltest;
+//—————————————————————————————————————————————————————————————————————————————————————————————————
+
     prcopt_t prcopt=prcopt_default;
     solopt_t solopt=solopt_default;
     filopt_t filopt={""};
@@ -100,7 +97,7 @@ int main(int argc, char **argv)
     double tint=0.0,es[]={2000,1,1,0,0,0},ee[]={2000,12,31,23,59,59},pos[3];
     int i,j,n,ret;
     char *infile[MAXFILE],*outfile="",*p;
-    
+
     prcopt.mode  =PMODE_KINEMA;
     prcopt.navsys=0;
     prcopt.refpos=1;
@@ -108,7 +105,7 @@ int main(int argc, char **argv)
     solopt.timef=0;
     sprintf(solopt.prog ,"%s ver.%s %s",PROGNAME,VER_RTKLIB,PATCH_LEVEL);
     sprintf(filopt.trace,"%s.trace",PROGNAME);
-    
+
     /* load options from configuration file */
     for (i=1;i<argc;i++) {
         if (!strcmp(argv[i],"-k")&&i+1<argc) {
@@ -185,7 +182,7 @@ int main(int argc, char **argv)
         return -2;
     }
     ret=postpos(ts,te,tint,0.0,&prcopt,&solopt,&filopt,infile,n,outfile,"","");
-    
+
     if (!ret) fprintf(stderr,"%40s\r","");
     return ret;
 }
