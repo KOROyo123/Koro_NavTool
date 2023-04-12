@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(rtklib_rnx2rtkp LANGUAGES CXX)
 
 #版本14以下可能会导致abseil不支持
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 

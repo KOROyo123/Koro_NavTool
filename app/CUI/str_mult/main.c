@@ -450,7 +450,7 @@ int main(int argc, char **argv)
 
     if(argc<2)
     {
-        strcpy(taskpath,"D:/RTKSERVER_CONF/str2str_mult/tasklist.txt");
+        strcpy(taskpath,"C:/Koro_Navdata/str_mult/tasklist.txt");
 
     }
     else
