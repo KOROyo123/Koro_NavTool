@@ -4,7 +4,7 @@ ps:
 
 
 
-linux
+_________________________linux________________________________________________________________
 
 KF-GINS
 /home/koro/Desktop/Koro_NavData/KF-GINS/
@@ -16,10 +16,9 @@ rnx2rtkp
 -k /home/koro/Desktop/Koro_NavData/rtklib/rnx2rtkp.conf -o /home/koro/Desktop/Koro_NavData/rtklib/result.pos /home/koro/Desktop/Koro_NavData/rtklib/SK03.obs  /home/koro/Desktop/Koro_NavData/rtklib/SK01.obs /home/koro/Desktop/Koro_NavData/rtklib/SK01.nav
 
 rtkrcv
--s -o /home/koro/Desktop/Koro_NavData/rtklib/rtkrcv.conf
+-o /home/koro/Desktop/Koro_NavData/rtklib/rtkrcv.conf
 
-
-windows
+_________________________windows________________________________________________________________
 KF-GINS
 /home/koro/Desktop/Koro_NavData/KF-GINS/
 

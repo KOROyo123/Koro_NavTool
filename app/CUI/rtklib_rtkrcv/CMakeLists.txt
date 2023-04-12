@@ -3,16 +3,15 @@ cmake_minimum_required(VERSION 3.5)
 project(rtklib_rtkrcv LANGUAGES CXX)
 
 #版本14以下可能会导致abseil不支持
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 
 
 #包含的源文件和头文件
 set(SOURCES
     vt.h
     vt.c
-    rtkrcv.c
+    main.c
 
 )
 
@@ -29,5 +28,5 @@ target_link_libraries(${PROJECT_NAME} Ws2_32 winmm)
 ENDIF()
 #如果是linux环境，需要手动链接math.h pthread库
 IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
-target_link_libraries(${PROJECT_NAME} m pthread)
+target_link_libraries(${PROJECT_NAME} m rt pthread)
 ENDIF()

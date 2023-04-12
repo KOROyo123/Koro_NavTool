@@ -16,7 +16,7 @@ set(SOURCES
 ENDIF()
 IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
 set(SOURCES
-    rnx2rtkp.cpp
+    rnx2rtkp.c
 )
 ENDIF()
 
