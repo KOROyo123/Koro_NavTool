@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 project(ob_gins)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -26,29 +26,22 @@ file(GLOB_RECURSE SOURCE
 include_directories(${PROJECT_SOURCE_DIR})
 add_executable(${PROJECT_NAME} ${SOURCE})
 
-
 # Eigen3
-include_directories(${CMAKE_SOURCE_DIR}/third/eigen-3.4.0)
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
 
-# yaml-cpp-0.7.0
-include_directories(${CMAKE_SOURCE_DIR}/third/yaml-cpp-0.7.0)
-target_link_libraries(${PROJECT_NAME} yaml-cpp)
+# yaml-cpp
+find_package(yaml-cpp REQUIRED)
+target_link_libraries(${PROJECT_NAME} ${YAML_CPP_LIBRARIES})
 
-## abseil
+# abseil
 set(ABSL_PROPAGATE_CXX_STD true)
-include_directories(${CMAKE_SOURCE_DIR}/third/abseil-cpp-20230125.2)
+add_subdirectory(src/thirdparty/abseil-cpp abseil-cpp)
 target_link_libraries(${PROJECT_NAME}
         absl::strings
         absl::str_format
         absl::time)
 
 # Ceres
-include_directories(${CMAKE_SOURCE_DIR}/third/ceres-solver-2.0.0)
-include_directories(${CMAKE_SOURCE_DIR}/third/ceres-solver-2.0.0/include)
-
+find_package(Ceres REQUIRED)
 target_link_libraries(${PROJECT_NAME} ${CERES_LIBRARIES})
-
-include_directories(${CMAKE_SOURCE_DIR}/third/ceres-solver-2.0.0/internal)
-include_directories(${CMAKE_SOURCE_DIR}/third/ceres-solver-2.0.0/internal/ceres/miniglog)
-#find_package(Ceres REQUIRED)
-
