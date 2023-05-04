@@ -1,0 +1,31 @@
+ps:
+在Windows系统中，正斜杠/表示除法，用来进行整除运算；反斜杠\用来表示目录。
+在Unix系统中，/表示目录；\表示跳脱字符将特殊字符变成一般字符（如enter,$,空格等）
+
+
+
+_________________________linux________________________________________________________________
+
+KF-GINS
+/home/koro/Desktop/Koro_NavData/KF-GINS/
+
+str2str
+-in tcpcli://49.234.134.179:10003 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
+
+rnx2rtkp
+-k /home/koro/Desktop/Koro_NavData/rtklib/rnx2rtkp.conf -o /home/koro/Desktop/Koro_NavData/rtklib/result.pos /home/koro/Desktop/Koro_NavData/rtklib/SK03.obs  /home/koro/Desktop/Koro_NavData/rtklib/SK01.obs /home/koro/Desktop/Koro_NavData/rtklib/SK01.nav
+
+rtkrcv
+-o /home/koro/Desktop/Koro_NavData/rtklib/rtkrcv.conf
+
+_________________________windows________________________________________________________________
+KF-GINS
+/home/koro/Desktop/Koro_NavData/KF-GINS/
+
+str2str
+-in tcpcli://49.234.134.179:10003 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
+
+rnx2rtkp
+
+-k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
+-k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav

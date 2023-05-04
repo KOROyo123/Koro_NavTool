@@ -1,0 +1,1222 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						94
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp",
+					"childIndexes" : 
+					[
+						2
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/base",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/base",
+					"targetIndexes" : 
+					[
+						31,
+						63,
+						65,
+						79,
+						80,
+						81,
+						86,
+						91
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/algorithm",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/algorithm"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/cleanup",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/cleanup"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/container",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/container",
+					"targetIndexes" : 
+					[
+						59,
+						78
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/debugging",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/debugging",
+					"targetIndexes" : 
+					[
+						40,
+						41,
+						42,
+						44,
+						61,
+						62,
+						82,
+						89
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/flags",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/flags",
+					"targetIndexes" : 
+					[
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/functional",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/functional"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/hash",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/hash",
+					"targetIndexes" : 
+					[
+						32,
+						58,
+						64
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/memory",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/memory"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/meta",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/meta"
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/numeric",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/numeric",
+					"targetIndexes" : 
+					[
+						60
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/profiling",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/profiling",
+					"targetIndexes" : 
+					[
+						43,
+						66
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/random",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/random",
+					"targetIndexes" : 
+					[
+						67,
+						68,
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/status",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/status",
+					"targetIndexes" : 
+					[
+						83,
+						84
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/strings",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/strings",
+					"targetIndexes" : 
+					[
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						85,
+						87,
+						88
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/synchronization",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/synchronization",
+					"targetIndexes" : 
+					[
+						57,
+						90
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/time",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/time",
+					"targetIndexes" : 
+					[
+						33,
+						92,
+						93
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/types",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/types",
+					"targetIndexes" : 
+					[
+						28,
+						29,
+						30
+					]
+				},
+				{
+					"build" : "lib/abseil-cpp/absl/utility",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "lib/abseil-cpp/absl/utility"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ob_gins",
+					"targetIndexes" : 
+					[
+						94
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21
+					],
+					"name" : "absl",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57,
+						58,
+						59,
+						60,
+						61,
+						62,
+						63,
+						64,
+						65,
+						66,
+						67,
+						68,
+						69,
+						70,
+						71,
+						72,
+						73,
+						74,
+						75,
+						76,
+						77,
+						78,
+						79,
+						80,
+						81,
+						82,
+						83,
+						84,
+						85,
+						86,
+						87,
+						88,
+						89,
+						90,
+						91,
+						92,
+						93
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Continuous::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-Continuous-Debug-c7e1602978b1479726d3.json",
+					"name" : "Continuous",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousBuild::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousBuild-Debug-d6f2d10cf700d0c53583.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousConfigure::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousConfigure-Debug-dc67a3a1afddef0c5c82.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousCoverage::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousCoverage-Debug-efe975f5d4a58f30e556.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousMemCheck::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousMemCheck-Debug-62f81c239ba2ddacfca5.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousStart::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousStart-Debug-62a026396f3009dc62fe.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousSubmit::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousSubmit-Debug-2aeec41982e2ff5b0a54.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousTest::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousTest-Debug-582c3e867c99180b2fd5.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousUpdate::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ContinuousUpdate-Debug-b143535432eb76c504cc.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Experimental::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-Experimental-Debug-41bfdab60e0e2d6fee09.json",
+					"name" : "Experimental",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalBuild::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalBuild-Debug-97ee7511f98a9cb6dfe8.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalConfigure::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalConfigure-Debug-93d52d4e3c5c775b0c29.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalCoverage::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalCoverage-Debug-94e070460ff1d7bf8af5.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalMemCheck::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalMemCheck-Debug-bc00b63b3450ba632e4c.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalStart::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalStart-Debug-dc97dd478a5bc6286281.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalSubmit::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalSubmit-Debug-cc38e61838fc85304f40.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalTest::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalTest-Debug-036a556bab1500009510.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalUpdate::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-ExperimentalUpdate-Debug-6c45316803e41ca7f5e8.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Nightly::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-Nightly-Debug-fe95faa0d4feaffbd6c0.json",
+					"name" : "Nightly",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyBuild::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyBuild-Debug-141371710650c6c71ef1.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyConfigure::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyConfigure-Debug-057888cd6c947b9ee4c6.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyCoverage::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyCoverage-Debug-24fb5e76c80f95df76d0.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemCheck::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyMemCheck-Debug-faa1bb978b6767469e19.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemoryCheck::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-7f01c08c9488d3c96f95.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyStart::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyStart-Debug-83081cf2c3dd4d9d2d9a.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlySubmit::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlySubmit-Debug-d66091980706af1a8860.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyTest::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyTest-Debug-4f8325d86bbd8c75b04c.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyUpdate::@f1e6d85a6965d0554fa1",
+					"jsonFile" : "target-NightlyUpdate-Debug-cbbbaaccad32e869b594.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "absl_bad_any_cast_impl::@eaf64e1467b2de97ff8f",
+					"jsonFile" : "target-absl_bad_any_cast_impl-Debug-74eaee753c3417f402bc.json",
+					"name" : "absl_bad_any_cast_impl",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "absl_bad_optional_access::@eaf64e1467b2de97ff8f",
+					"jsonFile" : "target-absl_bad_optional_access-Debug-057b9fddc5461a2070d6.json",
+					"name" : "absl_bad_optional_access",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "absl_bad_variant_access::@eaf64e1467b2de97ff8f",
+					"jsonFile" : "target-absl_bad_variant_access-Debug-37efa1afeb669abecb6b.json",
+					"name" : "absl_bad_variant_access",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_base::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_base-Debug-f9c2ef3bead20b892d1f.json",
+					"name" : "absl_base",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "absl_city::@971d5e9dcc1d5b4f39e9",
+					"jsonFile" : "target-absl_city-Debug-cbe127f7bf26a301eae4.json",
+					"name" : "absl_city",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "absl_civil_time::@0a9a3c08f452e1ea52da",
+					"jsonFile" : "target-absl_civil_time-Debug-84be63d59d3aa3b557dc.json",
+					"name" : "absl_civil_time",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cord::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cord-Debug-6a0408a2cda12729c07f.json",
+					"name" : "absl_cord",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cord_internal::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cord_internal-Debug-1b87421a44f426f9e95a.json",
+					"name" : "absl_cord_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cordz_functions::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cordz_functions-Debug-690f862ac50584eea616.json",
+					"name" : "absl_cordz_functions",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cordz_handle::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cordz_handle-Debug-7b946130d6c95a715fb5.json",
+					"name" : "absl_cordz_handle",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cordz_info::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cordz_info-Debug-5cfe3fe232d7cc69de87.json",
+					"name" : "absl_cordz_info",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_cordz_sample_token::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_cordz_sample_token-Debug-056227792d576c7f24d7.json",
+					"name" : "absl_cordz_sample_token",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_debugging_internal::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_debugging_internal-Debug-dbd6f034b4cc393211dd.json",
+					"name" : "absl_debugging_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_demangle_internal::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_demangle_internal-Debug-4c2f551946a10c3926cf.json",
+					"name" : "absl_demangle_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_examine_stack::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_examine_stack-Debug-bf79967ce5cbf063fbb1.json",
+					"name" : "absl_examine_stack",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "absl_exponential_biased::@2a3e4e359a74f3623d46",
+					"jsonFile" : "target-absl_exponential_biased-Debug-fb33637baa2f642bf432.json",
+					"name" : "absl_exponential_biased",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_failure_signal_handler::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_failure_signal_handler-Debug-43c8f80cf317c60df452.json",
+					"name" : "absl_failure_signal_handler",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags-Debug-67a1034a4f85834d7335.json",
+					"name" : "absl_flags",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_commandlineflag::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_commandlineflag-Debug-47de9500c69f47234993.json",
+					"name" : "absl_flags_commandlineflag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_commandlineflag_internal::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_commandlineflag_internal-Debug-929aca409a76c6669c97.json",
+					"name" : "absl_flags_commandlineflag_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_config::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_config-Debug-bbd20fce5876acad50bc.json",
+					"name" : "absl_flags_config",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_internal::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_internal-Debug-766a3a8b010feb30c70f.json",
+					"name" : "absl_flags_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_marshalling::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_marshalling-Debug-a1073655f6909c2f192b.json",
+					"name" : "absl_flags_marshalling",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_parse::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_parse-Debug-2b8f4afaeee51061f4e8.json",
+					"name" : "absl_flags_parse",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_private_handle_accessor::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_private_handle_accessor-Debug-e84d3b67718a6b89c324.json",
+					"name" : "absl_flags_private_handle_accessor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_program_name::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_program_name-Debug-6f202755b47ff285c549.json",
+					"name" : "absl_flags_program_name",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_reflection::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_reflection-Debug-d2d524ac614446fe0f35.json",
+					"name" : "absl_flags_reflection",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_usage::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_usage-Debug-7b20e7e14fe7dafe02a8.json",
+					"name" : "absl_flags_usage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "absl_flags_usage_internal::@66049233bb36e186869f",
+					"jsonFile" : "target-absl_flags_usage_internal-Debug-97ed48fac3f0b64c587f.json",
+					"name" : "absl_flags_usage_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 18,
+					"id" : "absl_graphcycles_internal::@57304c1fdb373367376a",
+					"jsonFile" : "target-absl_graphcycles_internal-Debug-b00d522c5a86724d532e.json",
+					"name" : "absl_graphcycles_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "absl_hash::@971d5e9dcc1d5b4f39e9",
+					"jsonFile" : "target-absl_hash-Debug-080178923b8d6ad2c6a0.json",
+					"name" : "absl_hash",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "absl_hashtablez_sampler::@cfc79cae70101b7fd261",
+					"jsonFile" : "target-absl_hashtablez_sampler-Debug-eb8bd46cb091b01274c6.json",
+					"name" : "absl_hashtablez_sampler",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "absl_int128::@38f5d8c1f8eb8de4e862",
+					"jsonFile" : "target-absl_int128-Debug-0d6c8c1db5b2a0eaf87e.json",
+					"name" : "absl_int128",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_leak_check::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_leak_check-Debug-1bfca599f16314f8250f.json",
+					"name" : "absl_leak_check",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_leak_check_disable::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_leak_check_disable-Debug-e3d7349bb7e519152694.json",
+					"name" : "absl_leak_check_disable",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_log_severity::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_log_severity-Debug-6edaa633ea23d47657f5.json",
+					"name" : "absl_log_severity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "absl_low_level_hash::@971d5e9dcc1d5b4f39e9",
+					"jsonFile" : "target-absl_low_level_hash-Debug-1fc75857d96ec681c644.json",
+					"name" : "absl_low_level_hash",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_malloc_internal::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_malloc_internal-Debug-a10d95b1bc30c7447527.json",
+					"name" : "absl_malloc_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "absl_periodic_sampler::@2a3e4e359a74f3623d46",
+					"jsonFile" : "target-absl_periodic_sampler-Debug-a447d18881434765c9f3.json",
+					"name" : "absl_periodic_sampler",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_distributions::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_distributions-Debug-bd572ee3ad3f3f9a3ae6.json",
+					"name" : "absl_random_distributions",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_distribution_test_util::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_distribution_test_util-Debug-9131f9e8b2369da91463.json",
+					"name" : "absl_random_internal_distribution_test_util",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_platform::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_platform-Debug-6451aa001c4da9bbaab3.json",
+					"name" : "absl_random_internal_platform",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_pool_urbg::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_pool_urbg-Debug-811b6361e8e02946c2bc.json",
+					"name" : "absl_random_internal_pool_urbg",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_randen::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_randen-Debug-41a282264166016cbf30.json",
+					"name" : "absl_random_internal_randen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_randen_hwaes::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_randen_hwaes-Debug-81d698d59085a06ae821.json",
+					"name" : "absl_random_internal_randen_hwaes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_randen_hwaes_impl::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_randen_hwaes_impl-Debug-3b8f979863e01de603cd.json",
+					"name" : "absl_random_internal_randen_hwaes_impl",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_randen_slow::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_randen_slow-Debug-cb67b0e633bec9125df7.json",
+					"name" : "absl_random_internal_randen_slow",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_internal_seed_material::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_internal_seed_material-Debug-7aad6b20badd959e601a.json",
+					"name" : "absl_random_internal_seed_material",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_seed_gen_exception::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_seed_gen_exception-Debug-02e38464ca826357c151.json",
+					"name" : "absl_random_seed_gen_exception",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "absl_random_seed_sequences::@e02aac60dbd8fa8997c5",
+					"jsonFile" : "target-absl_random_seed_sequences-Debug-145e2f86a32ba14f0b9d.json",
+					"name" : "absl_random_seed_sequences",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "absl_raw_hash_set::@cfc79cae70101b7fd261",
+					"jsonFile" : "target-absl_raw_hash_set-Debug-8432e69dc4cec7829601.json",
+					"name" : "absl_raw_hash_set",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_raw_logging_internal::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_raw_logging_internal-Debug-5c522a3e27439279a700.json",
+					"name" : "absl_raw_logging_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_scoped_set_env::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_scoped_set_env-Debug-3aae9c02430bea991668.json",
+					"name" : "absl_scoped_set_env",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_spinlock_wait::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_spinlock_wait-Debug-302fb82830bbd4f8055f.json",
+					"name" : "absl_spinlock_wait",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_stacktrace::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_stacktrace-Debug-c782143f16349137cf40.json",
+					"name" : "absl_stacktrace",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "absl_status::@b65b4f4f9ef5c2e74ffc",
+					"jsonFile" : "target-absl_status-Debug-3b086da01d9545080769.json",
+					"name" : "absl_status",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "absl_statusor::@b65b4f4f9ef5c2e74ffc",
+					"jsonFile" : "target-absl_statusor-Debug-ebb495bd1e72ec56455e.json",
+					"name" : "absl_statusor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_str_format_internal::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_str_format_internal-Debug-ed794a9259fabeba8170.json",
+					"name" : "absl_str_format_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_strerror::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_strerror-Debug-9de69aff8a852a54627e.json",
+					"name" : "absl_strerror",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_strings::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_strings-Debug-24cd462d3a1d0006a2a6.json",
+					"name" : "absl_strings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "absl_strings_internal::@7c77fe7451e3dc152107",
+					"jsonFile" : "target-absl_strings_internal-Debug-fbe4db6002fdedf7a83e.json",
+					"name" : "absl_strings_internal",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "absl_symbolize::@b7b3e5f542dbc45298b3",
+					"jsonFile" : "target-absl_symbolize-Debug-4fd88f9acf30c7afde21.json",
+					"name" : "absl_symbolize",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 18,
+					"id" : "absl_synchronization::@57304c1fdb373367376a",
+					"jsonFile" : "target-absl_synchronization-Debug-be15fb3495c29cfa464b.json",
+					"name" : "absl_synchronization",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "absl_throw_delegate::@e6ae9fac19a1864550e0",
+					"jsonFile" : "target-absl_throw_delegate-Debug-4c4f0459e7f19c5700c2.json",
+					"name" : "absl_throw_delegate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "absl_time::@0a9a3c08f452e1ea52da",
+					"jsonFile" : "target-absl_time-Debug-9bd5f6b5424acf737366.json",
+					"name" : "absl_time",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "absl_time_zone::@0a9a3c08f452e1ea52da",
+					"jsonFile" : "target-absl_time_zone-Debug-83138b7d2efef153dfbc.json",
+					"name" : "absl_time_zone",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ob_gins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ob_gins-Debug-e3513efac4b77615db2c.json",
+					"name" : "ob_gins",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/koro/Desktop/OB_GINS_Qt/build/Qt_6_2_0_GCC_64bit-Debug",
+		"source" : "/home/koro/Desktop/OB_GINS_Qt"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 2
+	}
+}
