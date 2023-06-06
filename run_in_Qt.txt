@@ -26,15 +26,9 @@ KF-GINS
 C:\Koro_NavData\KF-GINS\kf-gins.yaml
 
 str2str
--in tcpcli://49.234.134.179:10003 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
+-in tcpcli://49.234.134.179:10001 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
 
 rnx2rtkp
-
--k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
 -k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
 
-
-
--k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
--k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
 

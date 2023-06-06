@@ -1,4 +1,4 @@
-add_subdirectory(KF-GINS/)
+#add_subdirectory(KF-GINS/)
 
 
 IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
