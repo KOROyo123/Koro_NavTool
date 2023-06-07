@@ -8,18 +8,21 @@ _________________________linux__________________________________________________
 
 KF-GINS
 /home/koro/Desktop/Koro_NavData/KF-GINS/kf-gins.yaml
+/home/koro/Project/Koro_NavData/KF-GINS/kf-gins.yaml
 
 OB-GINS
 /home/koro/Desktop/Koro_NavData/OB-GINS/ob-gins.yaml
+/home/Project/Koro_NavData/OB-GINS/ob-gins.yaml
 
 str2str
--in tcpcli://49.234.134.179:10003 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
+-in tcpcli://49.234.134.179:10001 -out ntrips://admin:letmein@49.234.134.179:2101/knttest
 
 rnx2rtkp
--k /home/koro/Desktop/Koro_NavData/rtklib/rnx2rtkp.conf -o /home/koro/Desktop/Koro_NavData/rtklib/result.pos /home/koro/Desktop/Koro_NavData/rtklib/SK03.obs  /home/koro/Desktop/Koro_NavData/rtklib/SK01.obs /home/koro/Desktop/Koro_NavData/rtklib/SK01.nav
+-k /home/koro/Project/Koro_NavData/rtklib/rnx2rtkp.conf -o /home/koro/Project/Koro_NavData/rtklib/result.pos /home/koro/Project/Koro_NavData/rtklib/SK03.obs /home/koro/Project/Koro_NavData/rtklib/SK01.obs /home/koro/Project/Koro_NavData/rtklib/SK01.nav
 
-rtkrcv
--o /home/koro/Desktop/Koro_NavData/rtklib/rtkrcv.conf
+
+str_mult
+-i /home/koro/Project/Koro_NavData/str_mult/tasklist.txt
 
 _________________________windows________________________________________________________________
 KF-GINS
@@ -30,5 +33,9 @@ str2str
 
 rnx2rtkp
 -k C:\Koro_NavData\rtklib\rnx2rtkp.conf -o C:\Koro_NavData\rtklib\result.pos C:\Koro_NavData\rtklib\SK03.obs C:\Koro_NavData\rtklib\SK01.obs C:\Koro_NavData\rtklib\SK03.nav
+
+
+str_mult
+-i C:\Koro_NavData\str_mult\tasklist.txt
 
 

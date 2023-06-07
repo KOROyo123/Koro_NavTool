@@ -10,5 +10,5 @@ add_subdirectory(rtklib_rnx2rtkp/)
 
 
 IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
-add_subdirectory(rtklib_rtkrcv/)
+#add_subdirectory(rtklib_rtkrcv/)
 ENDIF()

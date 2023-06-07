@@ -2,5 +2,5 @@
 
 
 IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
-add_subdirectory(OB_GINS/)
+#add_subdirectory(OB_GINS/)
 ENDIF()
