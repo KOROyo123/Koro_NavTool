@@ -13,5 +13,6 @@
         <file>qml/global/GlobalModel.qml</file>
         <file>qml/window/HotloadWindow.qml</file>
         <file>qml/page/HotloadPage.qml</file>
+        <file>module/str_mult/strmultPage.qml</file>
     </qresource>
 </RCC>
