@@ -23,20 +23,39 @@
 #include "cpp/helper/Network.h"
 #include "cpp/helper/Log.h"
 
+#ifdef FLUENTUI_BUILD_STATIC_LIB
+#if (QT_VERSION > QT_VERSION_CHECK(6, 2, 0))
+Q_IMPORT_QML_PLUGIN(FluentUIPlugin)
+#endif
+#include <FluentUI.h>
+#endif
+
 #ifdef WIN32
 #include "app_dmp.h"
 #endif
 
 int main(int argc, char *argv[])
 {
-    const char *uri = "knt";
+    const char *uri = "frame";
     int major = 1;
     int minor = 0;
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#ifdef WIN32
+    ::SetUnhandledExceptionFilter(MyUnhandledExceptionFilter);
+    qputenv("QT_QPA_PLATFORM","windows:darkmode=2");
 #endif
-    QGuiApplication app(argc, argv);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    qputenv("QT_QUICK_CONTROLS_STYLE","Basic");
+#else
+    qputenv("QT_QUICK_CONTROLS_STYLE","Default");
+#endif
+
+#ifdef Q_OS_LINUX
+    //fix bug UOSv20 does not print logs
+    qputenv("QT_LOGGING_RULES","");
+    //fix bug UOSv20 v-sync does not work
+    qputenv("QSG_RENDER_LOOP","basic");
+#endif
 
     QGuiApplication::setOrganizationName("KOROyo123");
     QGuiApplication::setOrganizationDomain("https://github.com/KOROyo123");
@@ -47,6 +66,19 @@ int main(int argc, char *argv[])
 
     SettingsHelper::getInstance()->init(argv);
     Log::setup(argv,uri);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+    QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
+#endif
+#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+#endif
+#endif
+
+    QGuiApplication app(argc, argv);
 
     qmlRegisterType<CircularReveal>(uri, major, minor, "CircularReveal");
     qmlRegisterType<FileWatcher>(uri, major, minor, "FileWatcher");

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(Koro_NavTool VERSION 0.1 LANGUAGES CXX)
+project(Koro_NavTool VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

@@ -6,12 +6,12 @@ import QtQml 2.15
 import Qt.labs.platform 1.1
 import FluentUI 1.0
 import "../global"
-import knt 1.0
+import frame 1.0
 
 FluWindow {
 
     id:window
-    title: GlobalSetting.displayName
+    title: GlobalModel.displayName
     width: 1000
     height: 680
     minimumWidth: 1000
@@ -34,8 +34,8 @@ FluWindow {
     SystemTrayIcon {
         id:system_tray
         visible: true
-        icon.source: GlobalSetting.displayLogo
-        tooltip: GlobalSetting.displayName
+        icon.source: GlobalModel.displayLogo
+        tooltip: GlobalModel.displayName
         menu: Menu {
             MenuItem {
                 text: "退出"
@@ -176,9 +176,9 @@ FluWindow {
                     }
                     return FluTools.isMacos() ? 20 : 0
                 }
-                displayMode: GlobalSetting.displayMode//FluNavigationViewType.Minimal//
-                logo: GlobalSetting.displayLogo// app left-top logo
-                title: GlobalSetting.displayName //app left-top name
+                displayMode: GlobalModel.displayMode//FluNavigationViewType.Minimal//
+                logo: GlobalModel.displayLogo// app left-top logo
+                title: GlobalModel.displayName //app left-top name
                 onLogoClicked:{
                     clickCount += 1
                     showSuccess("%1:%2".arg(qsTr("Click Time")).arg(clickCount))

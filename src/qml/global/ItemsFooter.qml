@@ -12,6 +12,31 @@ FluObject{
 
     FluPaneItemSeparator{}
 
+    // FluPaneItem{
+    //     title:qsTr("About")
+    //     icon:FluentIcons.Contact
+    //     onTapListener:function(){
+    //         FluRouter.navigate("/about")
+    //     }
+    // }
+
+    FluPaneItem{
+        title: qsTr("Hot Loader1")
+        onTapListener: function(){
+            FluRouter.navigate("/hotload")
+        }
+    }
+
+    FluPaneItem{
+        title: qsTr("Hot Loader2")
+        menuDelegate: paneItemMenu
+        icon:FluentIcons.Settings
+        url:"qrc:/qml/page/HotloadPage.qml"
+        onTap:{
+            navigationView.push(url)
+        }
+    }
+
     FluPaneItem{
         title:qsTr("Settings")
         menuDelegate: paneItemMenu

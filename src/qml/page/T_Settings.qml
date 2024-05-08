@@ -4,7 +4,7 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.15
 import FluentUI 1.0
 import "../component"
-import"../global"
+import "../global"
 
 FluScrollablePage{
 
@@ -136,10 +136,10 @@ FluScrollablePage{
                 model: [{title:qsTr("Open"),mode:FluNavigationViewType.Open},{title:qsTr("Compact"),mode:FluNavigationViewType.Compact},{title:qsTr("Minimal"),mode:FluNavigationViewType.Minimal},{title:qsTr("Auto"),mode:FluNavigationViewType.Auto}]
                 delegate: FluRadioButton{
                     text: modelData.title
-                    checked: GlobalSetting.displayMode === modelData.mode
+                    checked: GlobalModel.displayMode === modelData.mode
                     clickListener:function(){
-                        GlobalSetting.displayMode = modelData.mode
-                        console.log("set displaymode",GlobalSetting.displayMode)
+                        console.log("dispay")
+                        GlobalModel.displayMode = modelData.mode
                     }
                 }
             }

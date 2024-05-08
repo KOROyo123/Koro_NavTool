@@ -32,6 +32,7 @@ FluObject{
         }
     }
 
+
     function getRecentlyAddedData(){
         var arr = []
         var items = navigationView.getItems();

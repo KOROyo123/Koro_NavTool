@@ -72,6 +72,14 @@
     </message>
 </context>
 <context>
+    <name>HotloadPage</name>
+    <message>
+        <location filename="qml/page/HotloadPage.qml" line="39"/>
+        <source>Drag in a qml file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>HotloadWindow</name>
     <message>
         <location filename="qml/window/HotloadWindow.qml" line="11"/>
@@ -110,7 +118,18 @@
 <context>
     <name>ItemsFooter</name>
     <message>
-        <location filename="qml/global/ItemsFooter.qml" line="16"/>
+        <location filename="qml/global/ItemsFooter.qml" line="24"/>
+        <source>Hot Loader1</source>
+        <oldsource>Hot Loader</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsFooter.qml" line="31"/>
+        <source>Hot Loader2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsFooter.qml" line="41"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>

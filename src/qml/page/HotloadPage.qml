@@ -5,14 +5,10 @@ import FluentUI 1.0
 import frame 1.0
 import "../component"
 
-FluWindow {
+FluContentPage {
 
-    id:window
-    title: qsTr("Hot Loader")
-    width: 800
-    height: 600
-    minimumWidth: 520
-    minimumHeight: 200
+    id:hotload
+
     launchMode: FluWindowType.SingleTask
     FileWatcher{
         id:watcher
@@ -20,7 +16,7 @@ FluWindow {
             loader.reload()
         }
     }
-    FluFrame{
+    Item{
         anchors.fill: parent
         FluRemoteLoader{
             id:loader
@@ -45,12 +41,12 @@ FluWindow {
             anchors.centerIn: parent
             visible: !loader.itemLodaer().item && loader.statusMode === FluStatusLayoutType.Success
         }
-        Rectangle{
-            radius: 4
-            anchors.fill: parent
-            color: "#33333333"
-            visible: drop_area.containsDrag
-        }
+        // Rectangle{
+        //     radius: 4
+        //     anchors.fill: parent
+        //     color: "#33333333"
+        //     visible: drop_area.containsDrag
+        // }
         DropArea{
             id:drop_area
             anchors.fill: parent

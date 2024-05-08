@@ -8,14 +8,18 @@ import "../global"
 
 FluScrollablePage{
 
-    FluButton{
-        onClicked: {
-            GlobalSetting.displayMode=2
-            GlobalSetting.displayName="xxxxxx"
+    Column{
+        FluButton{
 
-            console.log(GlobalSetting.displayName)
+        }
+        FluButton{
+
+        }
+        FluButton{
+
         }
     }
+
 
 }
 
