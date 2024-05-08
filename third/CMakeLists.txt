@@ -1,7 +1,0 @@
-add_subdirectory(rtklib)
-#add_subdirectory(abseil-cpp-20220623.1)
-add_subdirectory(abseil-cpp-20230125.2)
-add_subdirectory(yaml-cpp-0.7.0)
-#add_subdirectory(glog)
-#add_subdirectory(eigen-3.4.0)
-#add_subdirectory(ceres-solver)
