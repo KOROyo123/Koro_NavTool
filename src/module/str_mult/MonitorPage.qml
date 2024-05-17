@@ -9,7 +9,7 @@ import "qrc:/qml/global"
 
 FluContentPage {
 
-    title: qsTr("str2str_mult")
+    title: qsTr("Str Monitor")
 
     FluFrame{
         id: page_top

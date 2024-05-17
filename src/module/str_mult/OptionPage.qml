@@ -13,7 +13,9 @@ FluScrollablePage {
     property var navigationView
 
 
-    title: qsTr("str2str_mult")
+
+
+    title: qsTr("Options")
 
     FluExpander{
         headerText: qsTr("Version and Description")
@@ -27,9 +29,10 @@ FluScrollablePage {
         Layout.topMargin: 10
 
         FluButton{
+
+            // text: qsTr("Text Button")
             onClicked: {
-                // showInfo("点击Text Button")
-                nav_view.push("qrc:/module/str_mult/MonitorPage.qml")
+                showInfo("点击Text Button")
             }
             anchors{
                 fill: parent
@@ -64,8 +67,13 @@ FluScrollablePage {
         Layout.topMargin: 10
 
         FluButton{
+
+            // text: qsTr("Text Button")
             onClicked: {
-                nav_view.push("qrc:/module/str_mult/StreamPage.qml")
+                showInfo("点击Stream Button")
+                url: "qrc:/module/str_mult/StreamPage.qml"
+                loader.source=url
+                ;
             }
             anchors{
                 fill: parent
@@ -100,8 +108,10 @@ FluScrollablePage {
         Layout.topMargin: 10
 
         FluButton{
+
+            // text: qsTr("Text Button")
             onClicked: {
-                nav_view.push("qrc:/module/str_mult/OptionPage.qml")
+                showInfo("点击Text Button")
             }
             anchors{
                 fill: parent
@@ -128,10 +138,6 @@ FluScrollablePage {
                 verticalCenter: parent.verticalCenter
             }
         }
-
-
-
-
     }
 
 

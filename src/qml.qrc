@@ -13,8 +13,9 @@
         <file>qml/global/GlobalModel.qml</file>
         <file>qml/window/HotloadWindow.qml</file>
         <file>qml/page/HotloadPage.qml</file>
-        <file>module/str_mult/MainPage.qml</file>
+        <file>module/str_mult/DashboardPage.qml</file>
         <file>module/str_mult/StreamPage.qml</file>
-        <file>module/str_mult/ModulePage.qml</file>
+        <file>module/str_mult/MonitorPage.qml</file>
+        <file>module/str_mult/OptionPage.qml</file>
     </qresource>
 </RCC>

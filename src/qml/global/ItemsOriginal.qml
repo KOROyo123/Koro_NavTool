@@ -8,15 +8,6 @@ FluObject{
     property var navigationView
     property var paneItemMenu
 
-    property var switchPageUrl: GlobalModel.switchPageUrl
-
-
-    onSwitchPageUrlChanged: {
-        console.log(switchPageUrl)
-         var url=switchPageUrl
-        navigationView.push(url)
-    }
-
 
     function rename(item, newName){
         if(newName && newName.trim().length>0){
@@ -43,46 +34,41 @@ FluObject{
     }
 
 
-    FluPaneItemExpander{
-        id: gnss_tools
-        title: qsTr("GNSS_Tools")
-        icon: FluentIcons.SpecialEffectSize
-
-        FluPaneItem{
-            title: qsTr("str_mult")
-            menuDelegate: paneItemMenu
-            url: "qrc:/module/str_mult/MainPage.qml"
-            onTap: { navigationView.push(url) }
+    FluPaneItem{
+        id:item_str_mult
+        count: 0
+        title: qsTr("Stream Mult")
+        menuDelegate: paneItemMenu
+        infoBadge: FluBadge{
+            count: item_home.count
         }
-
-        FluPaneItem{
-            title: qsTr("str_mult2")
-            menuDelegate: paneItemMenu
-            url: "qrc:/module/str_mult/ModulePage.qml"
-            onTap: { navigationView.push(url) }
+        icon: FluentIcons.Sort
+        url: "qrc:/module/str_mult/DashboardPage.qml"
+        onTap: {
+            if(navigationView.getCurrentUrl()){
+                item_home.count = 0
+            }
+            navigationView.push(url)
         }
     }
 
-    FluPaneItemExpander{
-        id: caster_project
-        title: qsTr("Caster_Service")
-        icon: FluentIcons.MobWifiHotspot
-
-        FluPaneItem{
-            title: qsTr("ServiceManage")
-            menuDelegate: paneItemMenu
-            url: ""
-            onTap: { navigationView.push(url) }
+    FluPaneItem{
+        id:item_caster_service
+        count: 0
+        title: qsTr("Caster Service")
+        menuDelegate: paneItemMenu
+        infoBadge: FluBadge{
+            count: item_home.count
         }
-        FluPaneItem{
-            title: qsTr("accountManage")
-            menuDelegate: paneItemMenu
-            url: ""
-            onTap: { navigationView.push(url) }
+        icon: FluentIcons.TapAndSend
+        url: ""
+        onTap: {
+            if(navigationView.getCurrentUrl()){
+                item_home.count = 0
+            }
+            navigationView.push(url)
         }
     }
-
-
 
 
     function getRecentlyAddedData(){
