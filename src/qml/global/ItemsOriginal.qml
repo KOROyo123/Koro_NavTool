@@ -8,6 +8,16 @@ FluObject{
     property var navigationView
     property var paneItemMenu
 
+    property var switchPageUrl: GlobalModel.switchPageUrl
+
+
+    onSwitchPageUrlChanged: {
+        console.log(switchPageUrl)
+         var url=switchPageUrl
+        navigationView.push(url)
+    }
+
+
     function rename(item, newName){
         if(newName && newName.trim().length>0){
             item.title = newName;
@@ -31,6 +41,48 @@ FluObject{
             navigationView.push(url)
         }
     }
+
+
+    FluPaneItemExpander{
+        id: gnss_tools
+        title: qsTr("GNSS_Tools")
+        icon: FluentIcons.SpecialEffectSize
+
+        FluPaneItem{
+            title: qsTr("str_mult")
+            menuDelegate: paneItemMenu
+            url: "qrc:/module/str_mult/MainPage.qml"
+            onTap: { navigationView.push(url) }
+        }
+
+        FluPaneItem{
+            title: qsTr("str_mult2")
+            menuDelegate: paneItemMenu
+            url: "qrc:/module/str_mult/ModulePage.qml"
+            onTap: { navigationView.push(url) }
+        }
+    }
+
+    FluPaneItemExpander{
+        id: caster_project
+        title: qsTr("Caster_Service")
+        icon: FluentIcons.MobWifiHotspot
+
+        FluPaneItem{
+            title: qsTr("ServiceManage")
+            menuDelegate: paneItemMenu
+            url: ""
+            onTap: { navigationView.push(url) }
+        }
+        FluPaneItem{
+            title: qsTr("accountManage")
+            menuDelegate: paneItemMenu
+            url: ""
+            onTap: { navigationView.push(url) }
+        }
+    }
+
+
 
 
     function getRecentlyAddedData(){

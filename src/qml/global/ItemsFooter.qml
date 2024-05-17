@@ -20,22 +20,25 @@ FluObject{
     //     }
     // }
 
-    FluPaneItem{
-        title: qsTr("Hot Loader1")
-        onTapListener: function(){
-            FluRouter.navigate("/hotload")
-        }
-    }
 
     FluPaneItem{
-        title: qsTr("Hot Loader2")
+        title: qsTr("Hotload Page")
         menuDelegate: paneItemMenu
-        icon:FluentIcons.Settings
+        icon:FluentIcons.AdjustHologram
         url:"qrc:/qml/page/HotloadPage.qml"
         onTap:{
             navigationView.push(url)
         }
     }
+
+    FluPaneItem{
+        title: qsTr("Hotload Window")
+        icon:FluentIcons.AdjustHologram
+        onTapListener: function(){
+            FluRouter.navigate("/hotload")
+        }
+    }
+
 
     FluPaneItem{
         title:qsTr("Settings")
@@ -46,5 +49,6 @@ FluObject{
             navigationView.push(url)
         }
     }
+
 
 }

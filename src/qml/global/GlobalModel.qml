@@ -9,4 +9,12 @@ QtObject{
     property string displayName: "Koro_NavTool"
     property string displayLogo: "qrc:/logo.ico"
 
+    property var switchPageUrl
+
+
+    function switchPage(url){
+        switchPageUrl=url
+    }
+
+
 }

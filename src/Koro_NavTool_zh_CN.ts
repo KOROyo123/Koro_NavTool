@@ -118,18 +118,19 @@
 <context>
     <name>ItemsFooter</name>
     <message>
-        <location filename="qml/global/ItemsFooter.qml" line="24"/>
-        <source>Hot Loader1</source>
+        <location filename="qml/global/ItemsFooter.qml" line="35"/>
+        <source>Hotload Window</source>
+        <oldsource>Hot Loader1</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsFooter.qml" line="25"/>
+        <source>Hotload Page</source>
         <oldsource>Hot Loader</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsFooter.qml" line="31"/>
-        <source>Hot Loader2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="qml/global/ItemsFooter.qml" line="41"/>
+        <location filename="qml/global/ItemsFooter.qml" line="44"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,8 +138,40 @@
 <context>
     <name>ItemsOriginal</name>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="20"/>
+        <location filename="qml/global/ItemsOriginal.qml" line="30"/>
         <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="48"/>
+        <source>GNSS_Tools</source>
+        <oldsource>RTKLIB_Tool</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="52"/>
+        <source>str_mult</source>
+        <oldsource>strsvr</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="59"/>
+        <source>str_mult2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="68"/>
+        <source>Caster_Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="72"/>
+        <source>ServiceManage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="78"/>
+        <source>accountManage</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -163,6 +196,34 @@
     <message>
         <location filename="qml/window/LoginWindow.qml" line="51"/>
         <source>Please feel free to enter a password</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <location filename="module/str_mult/MainPage.qml" line="18"/>
+        <source>str2str_mult</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/MainPage.qml" line="21"/>
+        <source>Version and Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/MainPage.qml" line="43"/>
+        <source>Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/MainPage.qml" line="84"/>
+        <source>Stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/MainPage.qml" line="122"/>
+        <source>Option</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -306,6 +367,20 @@
     <message>
         <location filename="qml/window/StandardWindow.qml" line="40"/>
         <source>I&apos;m a Standard mode window, and every time I create a new window</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>StreamPage</name>
+    <message>
+        <location filename="module/str_mult/StreamPage.qml" line="12"/>
+        <source>str2str_mult</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/StreamPage.qml" line="36"/>
+        <location filename="module/str_mult/StreamPage.qml" line="60"/>
+        <source>Add Stream</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

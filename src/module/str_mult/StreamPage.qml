@@ -9,23 +9,41 @@ import "qrc:/qml/global"
 
 FluScrollablePage {
 
-    title: qsTr("Str_Mult")
+    title: qsTr("str2str_mult")
 
-    FluFrame {
+    FluFrame{
+        id: page_top
+        anchors{
+            // top:parent.top
+            left:parent.left
+            right:parent.right
+        }
+        // Layout.fillWidth: true
+
         Layout.fillWidth: true
-        Layout.preferredHeight: 68
-        Layout.topMargin: 10
-        padding: 10
+        Layout.preferredHeight: 40
 
-        FluButton {
-            id: add_stream
-            text: qsTr("Add Stream")
 
-            onClicked: {
-                add_stream_dialog.open();
+        Row{
+            anchors{
+                verticalCenter: parent.verticalCenter
+                left: parent.left
+                leftMargin: 5
+            }
+
+            FluButton {
+                id: add_stream
+                text: qsTr("Add Stream")
+
+                onClicked: {
+                    add_stream_dialog.open();
+                }
             }
         }
     }
+
+
+
 
     FluContentDialog {
         id: add_stream_dialog
@@ -116,9 +134,6 @@ FluScrollablePage {
                             FluText {
                                 text: "Output Stream:"
                             }
-                            FluToggleSwitch {
-                                text: "Enabled"
-                            }
                         }
 
                         Row {
@@ -176,6 +191,7 @@ FluScrollablePage {
                                 }
                                 disabled: true
                             }
+
                         }
                     }
 
