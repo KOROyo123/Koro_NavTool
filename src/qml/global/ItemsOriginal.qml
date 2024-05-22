@@ -40,13 +40,13 @@ FluObject{
         title: qsTr("Stream Mult")
         menuDelegate: paneItemMenu
         infoBadge: FluBadge{
-            count: item_home.count
+            count: item_str_mult.count
         }
         icon: FluentIcons.Sort
         url: "qrc:/module/str_mult/DashboardPage.qml"
         onTap: {
             if(navigationView.getCurrentUrl()){
-                item_home.count = 0
+                item_str_mult.count = 0
             }
             navigationView.push(url)
         }
@@ -58,13 +58,13 @@ FluObject{
         title: qsTr("Caster Service")
         menuDelegate: paneItemMenu
         infoBadge: FluBadge{
-            count: item_home.count
+            count: item_caster_service.count
         }
         icon: FluentIcons.TapAndSend
         url: ""
         onTap: {
             if(navigationView.getCurrentUrl()){
-                item_home.count = 0
+                item_caster_service.count = 0
             }
             navigationView.push(url)
         }
