@@ -1,24 +1,17 @@
-name: Build and Install Qt 6.5.3 on ARM
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  build:
+  arch64_job:
+    # The host should always be Linux
     runs-on: ubuntu-22.04
-    name: Build on ubuntu-22.04 armv7
+    name: Build on ubuntu-22.04 aarch64
     steps:
       - uses: actions/checkout@v4
       - uses: uraimo/run-on-arch-action@v2
         name: Run commands
         id: runcmd
         with:
-          arch: armv7
+          arch: aarch64
           distro: ubuntu22.04
 
           # Not required, but speeds up builds by storing container images in
@@ -30,60 +23,49 @@ jobs:
             uname -a
             echo ::set-output name=uname::$(uname -a)
 
-      - name: Set up cache directory
-        id: cache-setup
+      - name: Get the output
+        # Echo the `uname` output parameter from the `runcmd` step
         run: |
-          echo "QT_CACHE_DIR=$HOME/qt-cache" >> $GITHUB_ENV
-
-      - name: Cache Qt source
-        uses: actions/cache@v2
-        with:
-          path: ${{ runner.tool_cache }}/qt-everywhere-src-6.5.3
-          key: qt-everywhere-src-6.5.3
-          restore-keys: qt-everywhere-src-
-
-      - name: Download Qt 6.5.3 if not cached
-        if: steps.cache-setup.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p ${{ env.QT_CACHE_DIR }}
-          get -O ${{ env.QT_CACHE_DIR }}/qt-everywhere-src-6.5.3.tar.xz https://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
-          tar -xf ${{ env.QT_CACHE_DIR }}/qt-everywhere-src-6.5.3.tar.xz -C ${{ env.QT_CACHE_DIR }}
-
-      - name: Cache build directory
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.QT_CACHE_DIR }}/qt6-build
-          key: qt-build-6.5.3
-          restore-keys: qt-build-
-
+          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"   
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
-          libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
-          libglu1-mesa-dev ninja-build wget
-
+            sudo apt-get update
+            sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
+            libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
+            libglu1-mesa-dev ninja-build wget
+          
+      - name: Download Qt 6.5.3
+        run: |
+            wget https://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
+            tar -xf qt-everywhere-src-6.5.3.tar.xz
+          
       - name: Create build directory
-        run: mkdir -p ${{ env.QT_CACHE_DIR }}/qt6-build
-
+        run: mkdir qt6-build
+          
       - name: Configure Qt build
         run: |
-          cd ${{ env.QT_CACHE_DIR }}/qt6-build
-          cmake ${{ env.QT_CACHE_DIR }}/qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
-
+            cd qt6-build
+            ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
+            # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
+          
       - name: Build and install Qt
         run: |
-          cd ${{ env.QT_CACHE_DIR }}/qt6-build
-          cmake --build .
-          sudo cmake --install .
-
+            cd qt6-build
+            cmake --build .
+            cmake --install .
+          
       - name: Set up environment variables
         run: |
-          echo "export PATH=$HOME/qt6/bin:\$PATH" >> $GITHUB_ENV
-          echo "export LD_LIBRARY_PATH=$HOME/qt6/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
-          echo "export PKG_CONFIG_PATH=$HOME/qt6/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
-
+            echo "export PATH=$HOME/qt6/bin:\$PATH" >> $GITHUB_ENV
+            echo "export LD_LIBRARY_PATH=$HOME/qt6/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
+            echo "export PKG_CONFIG_PATH=$HOME/qt6/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
+          
       - name: Verify installation
         run: |
-          source $GITHUB_ENV
-          qmake --version
+            source $GITHUB_ENV
+            qmake --version
+
+
+            
+
+
