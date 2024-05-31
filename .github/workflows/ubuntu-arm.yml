@@ -10,38 +10,47 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
-    name: Set up ARM64 environment
+  # The host should always be Linux
+    runs-on: ubuntu-22.04
+    name: Build on ubuntu-22.04 aarch64
     steps:
-    - uses: actions/checkout@v2
-    - uses: uraimo/run-on-arch-action@v2
-      name: Run commands
-      id: runcmd
-      with:
-        arch: aarch64
-        distro: ubuntu20.04
+      - uses: actions/checkout@v4
+      - uses: uraimo/run-on-arch-action@v2
+        name: Run commands
+        id: runcmd
+        with:
+          arch: aarch64
+          distro: ubuntu22.04
+          # Not required, but speeds up builds by storing container images in
+          # a GitHub package registry.
+          githubToken: ${{ github.token }}
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
-          libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
-          libglu1-mesa-dev ninja-build wget
+          # Set an output parameter `uname` for use in subsequent steps
+          run: |
+            uname -a
+            echo ::set-output name=uname::$(uname -a)
 
-    - name: Install Qt 6.5.3
-      uses: jurplel/install-qt-action@v3
-      with:
-        version: '6.5.3'
-        host: 'linux'
-        target: 'desktop'
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
+            libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
+            libglu1-mesa-dev ninja-build wget
 
-    - name: Set up environment variables
-      run: |
-        echo "export PATH=$HOME/Qt/6.5.3/gcc_64/bin:\$PATH" >> $GITHUB_ENV
-        echo "export LD_LIBRARY_PATH=$HOME/Qt/6.5.3/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
-        echo "export PKG_CONFIG_PATH=$HOME/Qt/6.5.3/gcc_64/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
+      - name: Install Qt 6.5.3
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.3'
+          host: 'linux'
+          target: 'desktop'
 
-    - name: Verify installation
-      run: |
-        source $GITHUB_ENV
-        qmake --version
+      - name: Set up environment variables
+        run: |
+          echo "export PATH=$HOME/Qt/6.5.3/gcc_64/bin:\$PATH" >> $GITHUB_ENV
+          echo "export LD_LIBRARY_PATH=$HOME/Qt/6.5.3/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
+          echo "export PKG_CONFIG_PATH=$HOME/Qt/6.5.3/gcc_64/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
+
+      - name: Verify installation
+        run: |
+          source $GITHUB_ENV
+          qmake --version
