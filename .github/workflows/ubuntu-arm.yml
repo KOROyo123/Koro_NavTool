@@ -1,113 +1,48 @@
-name: Ubuntu
-on: [push, pull_request]
-# on: 
-#   workflow_dispatch:
-#   push:
-#     paths:
-#       - '*.txt'
-#       - 'src/**'
-#       - 'example/**'
-#       - 'scripts/**'
-#       - '.github/workflows/ubuntu.yml'
-#   pull_request:
-#     paths:
-#       - '*.txt'
-#       - 'src/**'
-#       - 'example/**'
-#       - 'scripts/**'
-#       - '.github/workflows/ubuntu.yml'
-      
+name: Build and Install Qt on ARM64
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build:
+    runs-on: ubuntu-20.04
 
-    # The host should always be Linux
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        qt_ver: [6.6.2]
-        qt_arch: [gcc_64]
-    env:
-      targetName: Koro_NavTool
-    name: Build on ubuntu-22.04 aarch64
     steps:
-      - uses: actions/checkout@v4
-      - uses: uraimo/run-on-arch-action@v2
-        name: Run commands
-        id: runcmd
-        with:
-          arch: aarch64
-          distro: ubuntu22.04
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-          # Not required, but speeds up builds by storing container images in
-          # a GitHub package registry.
-          githubToken: ${{ github.token }}
+    - name: Set up ARM64 environment
+      uses: uraimo/run-on-arch-action@v2.3.1
+      with:
+        architecture: arm64
+        distro: ubuntu20.04
 
-          # Set an output parameter `uname` for use in subsequent steps
-          run: |
-            uname -a
-            echo ::set-output name=uname::$(uname -a)
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
+          libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
+          libglu1-mesa-dev ninja-build wget
 
-      - name: Get the output
-        # Echo the `uname` output parameter from the `runcmd` step
-        run: |
-          echo "The uname output was ${{ steps.runcmd.outputs.uname }}"   
+    - name: Install Qt 6.5.3
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.3'
+        host: 'linux'
+        target: 'desktop'
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: ${{ matrix.qt_ver }}
-          cache: ${{steps.cache-qt.outputs.cache-hit}}
-          arch: ${{ matrix.qt_arch }}
-          modules: 'qt5compat qtmultimedia qtshadertools qtimageformats qt3d'
-      
-      - name: Set up Ninja
-        uses: seanmiddleditch/gha-setup-ninja@v3
-        with:
-          version: 1.10.2
-          
-      - name: ubuntu install GL library
-        run: sudo apt-get install -y libxcb-cursor0 libgl1-mesa-dev libxcb1-dev libgtk-3-dev libxkbcommon-x11-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxcb-xinerama0-dev libxcb-sync-dev  libxcb-render-util0-dev libxcb-shm0-dev
-        
-      - name: ubuntu install libfuse2
-        run: sudo apt install libfuse2
-        
-      - name: build ubuntu
-        run: |
-          ninja --version
-          cmake --version
-          mkdir build
-          cd build
-          cmake -DCMAKE_MESSAGE_LOG_LEVEL=STATUS -DCMAKE_PREFIX_PATH=/home/runner/work/FluentUI/Qt/${{ matrix.qt_ver }}/gcc_64 -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE=Release -GNinja ..
-          cmake --build . --target all --config Release --parallel
-          
-      - name: install QT linux deploy
-        uses: miurahr/install-linuxdeploy-action@v1
-        with:
-          plugins: qt appimage
-          
-      - name: Check if svg file exists
-        run: if [ ! -f "${targetName}.svg" ]; then echo "File not found, creating..."; touch ${targetName}.svg; fi
+    - name: Set up environment variables
+      run: |
+        echo "export PATH=$HOME/Qt/6.5.3/gcc_64/bin:\$PATH" >> $GITHUB_ENV
+        echo "export LD_LIBRARY_PATH=$HOME/Qt/6.5.3/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
+        echo "export PKG_CONFIG_PATH=$HOME/Qt/6.5.3/gcc_64/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
 
-      - name: package
-        run: |
-          # make sure Qt plugin finds QML sources so it can deploy the imported files
-          export QML_SOURCES_PATHS=./
-          # 拷贝依赖
-          linuxdeploy-x86_64.AppImage --plugin=qt --output=appimage --create-desktop-file --icon-file=${targetName}.svg --executable=bin/Release/${targetName} --appdir bin/release/
-          mv ${{ env.targetName }}-*.AppImage ${{ env.targetName }}.AppImage
-        
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ env.targetName }}_${{ matrix.os }}_${{matrix.qt_ver}}
-          path: ${{ env.targetName }}.AppImage
-
-      - name: uploadRelease
-        if: startsWith(github.event.ref, 'refs/tags/')
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{ env.targetName }}.AppImage
-          asset_name: ${{ env.targetName }}_${{  github.ref_name }}_${{ matrix.os }}_Qt${{ matrix.qt_ver }}.AppImage
-          tag: ${{ github.ref }}
-          overwrite: true
+    - name: Verify installation
+      run: |
+        source $GITHUB_ENV
+        qmake --version
