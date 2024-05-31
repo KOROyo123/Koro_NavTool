@@ -11,15 +11,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-
+    name: Set up ARM64 environment
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up ARM64 environment
-      uses: uraimo/run-on-arch-action@v2.3.1
+    - uses: actions/checkout@v2
+    - uses: uraimo/run-on-arch-action@v2
+      name: Run commands
+      id: runcmd
       with:
-        architecture: arm64
+        arch: aarch64
         distro: ubuntu20.04
 
     - name: Install dependencies
