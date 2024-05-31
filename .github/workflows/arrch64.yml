@@ -38,9 +38,9 @@ jobs:
       - name: Cache Qt source
         uses: actions/cache@v2
         with:
-          path: ${{ env.QT_CACHE_DIR }}/qt-everywhere-src-6.5.3
-          key: qt-source-6.5.3
-          restore-keys: qt-source-
+          path: ${{ runner.tool_cache }}/qt-everywhere-src-6.5.3
+          key: qt-everywhere-src-6.5.3
+          restore-keys: qt-everywhere-src-
 
       - name: Download Qt 6.5.3 if not cached
         if: steps.cache-setup.outputs.cache-hit != 'true'
