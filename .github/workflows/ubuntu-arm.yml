@@ -1,56 +1,70 @@
-name: Build and Install Qt on ARM64
+name: Deploy ARM Ubuntu Container
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
-  # The host should always be Linux
-    runs-on: ubuntu-22.04
-    name: Build on ubuntu-22.04 aarch64
+  deploy:
+    runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-      - uses: uraimo/run-on-arch-action@v2
-        name: Run commands
-        id: runcmd
-        with:
-          arch: aarch64
-          distro: ubuntu22.04
-          # Not required, but speeds up builds by storing container images in
-          # a GitHub package registry.
-          githubToken: ${{ github.token }}
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-          # Set an output parameter `uname` for use in subsequent steps
-          run: |
-            uname -a
-            echo ::set-output name=uname::$(uname -a)
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+      with:
+        platforms: arm
 
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential libgl1-mesa-dev libxcb-xinerama0-dev libfontconfig1-dev \
-            libxkbcommon-x11-dev libxi-dev libxrender-dev libxrandr-dev libxcursor-dev libx11-xcb-dev \
-            libglu1-mesa-dev ninja-build wget
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
 
-      - name: Install Qt 6.5.3
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '6.5.3'
-          host: 'linux'
-          target: 'desktop'
+    - name: Download ARM rootfs
+      run: |
+        wget https://example.com/arm-rootfs.tar.gz
+        mkdir arm-rootfs
+        tar -xzf arm-rootfs.tar.gz -C arm-rootfs
+        sudo cp /usr/bin/qemu-arm-static arm-rootfs/usr/bin/
 
-      - name: Set up environment variables
-        run: |
-          echo "export PATH=$HOME/Qt/6.5.3/gcc_64/bin:\$PATH" >> $GITHUB_ENV
-          echo "export LD_LIBRARY_PATH=$HOME/Qt/6.5.3/gcc_64/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
-          echo "export PKG_CONFIG_PATH=$HOME/Qt/6.5.3/gcc_64/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
+    - name: Start ARM container
+      run: |
+        sudo chroot arm-rootfs /bin/bash
 
-      - name: Verify installation
-        run: |
+    - name: Install necessary dependencies for Qt
+      run: |
+        apt-get update
+        apt-get install -y build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
+        sudo apt update
+        sudo apt install ninja-build
+
+    - name: Download Qt source code
+      run: |
+        wget https://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
+        tar -xf qt-everywhere-src-6.5.3.tar.xz
+    - name: Create build directory
+      run: mkdir qt6-build
+
+    - name: Configure Qt build
+      run: |
+          cd qt6-build
+          ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
+          # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
+    - name: Configure Qt build
+      run: |
+          cd qt6-build
+          ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
+          # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
+             
+    - name: Set up environment variables
+      run: |
+              echo "export PATH=$HOME/qt6/bin:\$PATH" >> $GITHUB_ENV
+              echo "export LD_LIBRARY_PATH=$HOME/qt6/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
+              echo "export PKG_CONFIG_PATH=$HOME/qt6/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
+            
+    - name: Verify installation
+      run: |
           source $GITHUB_ENV
           qmake --version
+  

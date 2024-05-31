@@ -48,11 +48,7 @@ jobs:
             ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
             # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
           
-      - name: Build and install Qt
-        run: |
-            cd qt6-build
-            cmake --build .
-            cmake --install .
+
           
       - name: Set up environment variables
         run: |
