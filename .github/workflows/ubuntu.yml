@@ -26,7 +26,7 @@ jobs:
         qt_ver: [6.6.2]
         qt_arch: [gcc_64]
     env:
-      targetName: Koro_Navtool
+      targetName: Koro_NavTool
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
