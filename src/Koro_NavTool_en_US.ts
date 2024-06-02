@@ -45,21 +45,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="16"/>
+        <source>Koro Caster Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="19"/>
         <location filename="module/str_mult/DashboardPage.qml" line="19"/>
         <source>Version and Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="40"/>
         <location filename="module/str_mult/DashboardPage.qml" line="40"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="76"/>
         <location filename="module/str_mult/DashboardPage.qml" line="76"/>
         <source>Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="112"/>
         <location filename="module/str_mult/DashboardPage.qml" line="112"/>
         <source>Option</source>
         <translation type="unfinished"></translation>
@@ -273,27 +282,37 @@
 <context>
     <name>OptionPage</name>
     <message>
-        <location filename="module/str_mult/OptionPage.qml" line="18"/>
+        <location filename="module/str_mult/OptionPage.qml" line="15"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="module/str_mult/OptionPage.qml" line="21"/>
-        <source>Version and Description</source>
+        <location filename="module/str_mult/OptionPage.qml" line="25"/>
+        <source>Standard Button</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="module/str_mult/OptionPage.qml" line="43"/>
-        <source>Monitor</source>
+        <location filename="module/str_mult/OptionPage.qml" line="27"/>
+        <source>Click StandardButton</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="module/str_mult/OptionPage.qml" line="84"/>
+        <location filename="module/str_mult/OptionPage.qml" line="40"/>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/OptionPage.qml" line="62"/>
+        <source>Connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/OptionPage.qml" line="103"/>
         <source>Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="module/str_mult/OptionPage.qml" line="122"/>
+        <location filename="module/str_mult/OptionPage.qml" line="141"/>
         <source>Option</source>
         <translation type="unfinished"></translation>
     </message>
@@ -400,8 +419,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="module/str_mult/StreamPage.qml" line="36"/>
-        <location filename="module/str_mult/StreamPage.qml" line="60"/>
+        <location filename="module/str_mult/StreamPage.qml" line="39"/>
+        <location filename="module/str_mult/StreamPage.qml" line="63"/>
         <source>Add Stream</source>
         <translation type="unfinished"></translation>
     </message>

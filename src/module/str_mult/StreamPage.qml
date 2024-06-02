@@ -20,8 +20,11 @@ FluContentPage {
         }
         // Layout.fillWidth: true
 
+        height: 60
+
         Layout.fillWidth: true
-        Layout.preferredHeight: 40
+        Layout.preferredHeight: 68
+        Layout.topMargin: 10
 
 
         Row{

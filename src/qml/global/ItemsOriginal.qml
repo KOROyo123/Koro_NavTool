@@ -61,7 +61,7 @@ FluObject{
             count: item_caster_service.count
         }
         icon: FluentIcons.TapAndSend
-        url: ""
+        url: "qrc:/module/caster_gui/DashboardPage.qml"
         onTap: {
             if(navigationView.getCurrentUrl()){
                 item_caster_service.count = 0

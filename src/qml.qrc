@@ -17,5 +17,6 @@
         <file>module/str_mult/StreamPage.qml</file>
         <file>module/str_mult/MonitorPage.qml</file>
         <file>module/str_mult/OptionPage.qml</file>
+        <file>module/caster_gui/DashboardPage.qml</file>
     </qresource>
 </RCC>

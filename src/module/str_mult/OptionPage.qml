@@ -12,16 +12,35 @@ FluScrollablePage {
 
     property var navigationView
 
-
-
-
     title: qsTr("Options")
 
-    FluExpander{
-        headerText: qsTr("Version and Description")
-
+    FluFrame{
         Layout.fillWidth: true
+        Layout.preferredHeight: 68
+        padding: 10
+        Layout.topMargin: 20
+
+        FluButton{
+            disabled: button_switch.checked
+            text: qsTr("Standard Button")
+            onClicked: {
+                showInfo(qsTr("Click StandardButton"))
+            }
+            anchors{
+                verticalCenter: parent.verticalCenter
+                left: parent.left
+            }
+        }
+        FluToggleSwitch{
+            id: button_switch
+            anchors{
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
+            text: qsTr("Disabled")
+        }
     }
+
 
     FluFrame{
         Layout.fillWidth: true
@@ -40,7 +59,7 @@ FluScrollablePage {
         }
 
         FluText{
-            text: qsTr("Monitor")
+            text: qsTr("Connect")
             font: FluTextStyle.Subtitle
 
             anchors{
