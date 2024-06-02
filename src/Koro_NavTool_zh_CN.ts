@@ -940,6 +940,14 @@ My only desire is to be permitted to drive out the traitors and restore the Han.
     </message>
 </context>
 <context>
+    <name>T_Home</name>
+    <message>
+        <location filename="qml/page/T_Home.qml" line="13"/>
+        <source>test</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>T_Icons</name>
     <message>
         <location filename="qml/page/T_Icons.qml" line="9"/>

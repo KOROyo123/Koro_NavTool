@@ -10,7 +10,7 @@ FluScrollablePage{
 
     Column{
         FluButton{
-
+            text: qsTr("test")
         }
         FluButton{
 
