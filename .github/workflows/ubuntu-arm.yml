@@ -47,20 +47,14 @@ jobs:
           # no secrets are present in the container state or logs.
           install: |
             uname -a
-            case "${{ matrix.distro }}" in
-              ubuntu*|jessie|stretch|buster|bullseye)
-                apt-get update -q -y
-                apt-get install -q -y git
-                ;;
-              fedora*)
-                dnf -y update
-                dnf -y install git which
-                ;;
-              alpine*)
-                apk update
-                apk add git
-                ;;
-            esac
+            apt-get update -q -y
+            apt-get install -q -y git
+
+            wget http://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
+            tar -xf qt-everywhere-src-6.5.3.tar.xz
+            cd qt-everywhere-src-6.5.3
+            ./configure -opensource -confirm-license
+            make -j$(nproc)
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
@@ -68,25 +62,8 @@ jobs:
             cp $(which git) "/artifacts/${artifact_name}"
             echo "Produced artifact at /artifacts/${artifact_name}"
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: '6.5.3'
-          host: 'linux'
-          target: 'desktop'
-          arch: 'gcc_64'
-          dir: '${{ github.workspace }}/artifacts/'
-          install-deps: 'true'
-          modules: 'qtcharts qtwebengine'
-          cache: 'true'
-          cache-key-prefix: 'install-qt-action'
-          setup-python: 'true'
-          tools: 'tools_ifw tools_qtcreator,qt.tools.qtcreator'
-          set-env: 'true'
-          tools-only: 'false'
-          aqtversion: '==3.1.*'
-          py7zrversion: '==0.20.*'
-          extra: '--external 7z'
+
+
       
       - name: Show the artifact
         # Items placed in /artifacts in the container will be in
