@@ -46,21 +46,21 @@ jobs:
           # publicly in your project's package repository, so it is vital that
           # no secrets are present in the container state or logs.
           install: |
-
-            # case "${{ matrix.distro }}" in
-            #   ubuntu*|jessie|stretch|buster|bullseye)
-            #     apt-get update -q -y
-            #     apt-get install -q -y git
-            #     ;;
-            #   fedora*)
-            #     dnf -y update
-            #     dnf -y install git which
-            #     ;;
-            #   alpine*)
-            #     apk update
-            #     apk add git
-            #     ;;
-            # esac
+            uname -a
+            case "${{ matrix.distro }}" in
+              ubuntu*|jessie|stretch|buster|bullseye)
+                apt-get update -q -y
+                apt-get install -q -y git
+                ;;
+              fedora*)
+                dnf -y update
+                dnf -y install git which
+                ;;
+              alpine*)
+                apk update
+                apk add git
+                ;;
+            esac
 
           # Produce a binary artifact and place it in the mounted volume
           run: |
