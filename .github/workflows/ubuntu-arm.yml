@@ -1,70 +1,73 @@
-name: Deploy ARM Ubuntu Container
-
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
+  build_job:
+    # The host should always be linux
+    runs-on: ubuntu-22.04
+    name: Build on ${{ matrix.distro }} ${{ matrix.arch }}
+
+    # Run steps on a matrix of 4 arch/distro combinations
+    strategy:
+      matrix:
+        include:
+          - arch: aarch64
+            distro: ubuntu20.04
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: uraimo/run-on-arch-action@v2
+        name: Build artifact
+        id: build
+        with:
+          arch: ${{ matrix.arch }}
+          distro: ${{ matrix.distro }}
 
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
-      with:
-        platforms: arm
+          # Not required, but speeds up builds
+          githubToken: ${{ github.token }}
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+          # Create an artifacts directory
+          setup: |
+            mkdir -p "${PWD}/artifacts"
 
-    - name: Download ARM rootfs
-      run: |
-        wget https://example.com/arm-rootfs.tar.gz
-        mkdir arm-rootfs
-        tar -xzf arm-rootfs.tar.gz -C arm-rootfs
-        sudo cp /usr/bin/qemu-arm-static arm-rootfs/usr/bin/
+          # Mount the artifacts directory as /artifacts in the container
+          dockerRunArgs: |
+            --volume "${PWD}/artifacts:/artifacts"
 
-    - name: Start ARM container
-      run: |
-        sudo chroot arm-rootfs /bin/bash
+          # Pass some environment variables to the container
+          env: | # YAML, but pipe character is necessary
+            artifact_name: git-${{ matrix.distro }}_${{ matrix.arch }}
 
-    - name: Install necessary dependencies for Qt
-      run: |
-        apt-get update
-        apt-get install -y build-essential libfontconfig1-dev libdbus-1-dev libfreetype6-dev libicu-dev libsqlite3-dev libssl-dev libpng-dev libjpeg-dev libglib2.0-dev libraspberrypi-dev
-        sudo apt update
-        sudo apt install ninja-build
+          # The shell to run commands with in the container
+          shell: /bin/sh
 
-    - name: Download Qt source code
-      run: |
-        wget https://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
-        tar -xf qt-everywhere-src-6.5.3.tar.xz
-    - name: Create build directory
-      run: mkdir qt6-build
+          # Install some dependencies in the container. This speeds up builds if
+          # you are also using githubToken. Any dependencies installed here will
+          # be part of the container image that gets cached, so subsequent
+          # builds don't have to re-install them. The image layer is cached
+          # publicly in your project's package repository, so it is vital that
+          # no secrets are present in the container state or logs.
+          install: |
+            case "${{ matrix.distro }}" in
+              ubuntu*|jessie|stretch|buster|bullseye)
+                apt-get update -q -y
+                apt-get install -q -y git
+                ;;
+              fedora*)
+                dnf -y update
+                dnf -y install git which
+                ;;
+              alpine*)
+                apk update
+                apk add git
+                ;;
+            esac
 
-    - name: Configure Qt build
-      run: |
-          cd qt6-build
-          ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
-          # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
-    - name: Configure Qt build
-      run: |
-          cd qt6-build
-          ../qt-everywhere-src-6.5.3/configure -prefix /home/sinognss/develop/qt-6.5.3-x11 -opensource -confirm-license -release -strip -shared -nomake tests -skip QtWebEngine -skip QtPdf -skip Qt6WebEngineCore -skip Qt6WebEngineQuick -skip qthttpserver  -skip qtwebengine -skip qtpdf -skip qt6webenginecore -skip qt6webenginequick| tee config.usr.log
-          # cmake ../qt-everywhere-src-6.5.3 -GNinja -DCMAKE_INSTALL_PREFIX=$HOME/qt6
-             
-    - name: Set up environment variables
-      run: |
-              echo "export PATH=$HOME/qt6/bin:\$PATH" >> $GITHUB_ENV
-              echo "export LD_LIBRARY_PATH=$HOME/qt6/lib:\$LD_LIBRARY_PATH" >> $GITHUB_ENV
-              echo "export PKG_CONFIG_PATH=$HOME/qt6/lib/pkgconfig:\$PKG_CONFIG_PATH" >> $GITHUB_ENV
-            
-    - name: Verify installation
-      run: |
-          source $GITHUB_ENV
-          qmake --version
-  
+          # Produce a binary artifact and place it in the mounted volume
+          run: |
+            cp $(which git) "/artifacts/${artifact_name}"
+            echo "Produced artifact at /artifacts/${artifact_name}"
+
+      - name: Show the artifact
+        # Items placed in /artifacts in the container will be in
+        # ${PWD}/artifacts on the host.
+        run: |
+          ls -al "${PWD}/artifacts"
