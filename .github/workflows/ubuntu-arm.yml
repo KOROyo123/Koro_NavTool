@@ -49,7 +49,7 @@ jobs:
             uname -a
             apt-get update -q -y
             apt-get install -q -y git
-
+            suao apt-get install wget -y
             wget http://download.qt.io/official_releases/qt/6.5/6.5.3/single/qt-everywhere-src-6.5.3.tar.xz
             tar -xf qt-everywhere-src-6.5.3.tar.xz
             cd qt-everywhere-src-6.5.3
