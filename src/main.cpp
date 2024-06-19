@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
     qputenv("QSG_RENDER_LOOP","basic");
 #endif
 
-    QGuiApplication::setOrganizationName("KOROyo123");
-    QGuiApplication::setOrganizationDomain("https://github.com/KOROyo123");
-    QGuiApplication::setApplicationName("Koro_NavTool");
-    QGuiApplication::setApplicationDisplayName("Koro_NavTool");
+    QGuiApplication::setOrganizationName("NavTool");
+    QGuiApplication::setOrganizationDomain("https://github.com/NavTool");
+    QGuiApplication::setApplicationName("NavTool");
+    QGuiApplication::setApplicationDisplayName("NavTool");
     QGuiApplication::setApplicationVersion(PROJECT_SET_VERSION);
     QGuiApplication::setQuitOnLastWindowClosed(false);
 

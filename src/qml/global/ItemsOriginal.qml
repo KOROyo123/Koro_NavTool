@@ -33,17 +33,16 @@ FluObject{
         }
     }
 
-
     FluPaneItem{
-        id:item_str_mult
+        id:item_nav_tool
         count: 0
-        title: qsTr("Stream Mult")
+        title: qsTr("Nav Tool")
         menuDelegate: paneItemMenu
         infoBadge: FluBadge{
             count: item_str_mult.count
         }
-        icon: FluentIcons.Sort
-        url: "qrc:/module/str_mult/DashboardPage.qml"
+        icon: FluentIcons.OEM
+        url: "qrc:/module/nav_tool/DashboardPage.qml"
         onTap: {
             if(navigationView.getCurrentUrl()){
                 item_str_mult.count = 0
@@ -69,6 +68,69 @@ FluObject{
             navigationView.push(url)
         }
     }
+
+
+
+
+
+
+
+    FluPaneItem{
+        id:item_auth_gui
+        count: 0
+        title: qsTr("User Management")
+        menuDelegate: paneItemMenu
+        infoBadge: FluBadge{
+            count: item_caster_service.count
+        }
+        icon: FluentIcons.PassiveAuthentication
+        url: "qrc:/module/auth_gui/DashboardPage.qml"
+        onTap: {
+            if(navigationView.getCurrentUrl()){
+                item_caster_service.count = 0
+            }
+            navigationView.push(url)
+        }
+    }
+
+    FluPaneItem{
+        id:item_str_mult
+        count: 0
+        title: qsTr("Stream Tool")
+        menuDelegate: paneItemMenu
+        infoBadge: FluBadge{
+            count: item_str_mult.count
+        }
+        icon: FluentIcons.Sort
+        url: "qrc:/module/str_mult/DashboardPage.qml"
+        onTap: {
+            if(navigationView.getCurrentUrl()){
+                item_str_mult.count = 0
+            }
+            navigationView.push(url)
+        }
+    }
+
+
+
+    FluPaneItem{
+        id:item_ntrip_tool
+        count: 0
+        title: qsTr("Test Tool")
+        menuDelegate: paneItemMenu
+        infoBadge: FluBadge{
+            count: item_caster_service.count
+        }
+        icon: FluentIcons.SpeedHigh
+        url: "qrc:/module/test_tool/DashboardPage.qml"
+        onTap: {
+            if(navigationView.getCurrentUrl()){
+                item_caster_service.count = 0
+            }
+            navigationView.push(url)
+        }
+    }
+
 
 
     function getRecentlyAddedData(){

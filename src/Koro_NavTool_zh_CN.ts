@@ -41,36 +41,69 @@
     <name>DashboardPage</name>
     <message>
         <location filename="module/str_mult/DashboardPage.qml" line="16"/>
-        <source>str2str_mult</source>
+        <source>Stream Tool</source>
+        <oldsource>Stream Relay</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="module/caster_gui/DashboardPage.qml" line="16"/>
-        <source>Koro Caster Service</source>
+        <source>Caster Service</source>
+        <oldsource>Koro Caster Service</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/auth_gui/DashboardPage.qml" line="16"/>
+        <source>User Management</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/auth_gui/DashboardPage.qml" line="19"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="19"/>
+        <location filename="module/nav_tool/DashboardPage.qml" line="19"/>
         <location filename="module/str_mult/DashboardPage.qml" line="19"/>
+        <location filename="module/test_tool/DashboardPage.qml" line="19"/>
         <source>Version and Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/auth_gui/DashboardPage.qml" line="40"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="40"/>
         <location filename="module/str_mult/DashboardPage.qml" line="40"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/auth_gui/DashboardPage.qml" line="76"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="76"/>
+        <location filename="module/nav_tool/DashboardPage.qml" line="76"/>
         <location filename="module/str_mult/DashboardPage.qml" line="76"/>
+        <location filename="module/test_tool/DashboardPage.qml" line="76"/>
         <source>Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/auth_gui/DashboardPage.qml" line="112"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="112"/>
+        <location filename="module/nav_tool/DashboardPage.qml" line="112"/>
         <location filename="module/str_mult/DashboardPage.qml" line="112"/>
+        <location filename="module/test_tool/DashboardPage.qml" line="112"/>
         <source>Option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/test_tool/DashboardPage.qml" line="16"/>
+        <source>Test Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/nav_tool/DashboardPage.qml" line="16"/>
+        <source>Nav Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/nav_tool/DashboardPage.qml" line="40"/>
+        <location filename="module/test_tool/DashboardPage.qml" line="40"/>
+        <source>NTRIP Caster Performance Testing Tool</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -180,13 +213,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="40"/>
-        <source>Stream Mult</source>
-        <oldsource>Str_Mult</oldsource>
+        <location filename="qml/global/ItemsOriginal.qml" line="99"/>
+        <source>Stream Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="58"/>
+        <location filename="qml/global/ItemsOriginal.qml" line="39"/>
+        <source>Nav Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="81"/>
+        <source>User Management</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="119"/>
+        <source>Test Tool</source>
+        <oldsource>Ntrip Tool</oldsource>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="qml/global/ItemsOriginal.qml" line="57"/>
         <source>Caster Service</source>
         <translation type="unfinished"></translation>
     </message>

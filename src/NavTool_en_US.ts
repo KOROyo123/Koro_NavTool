@@ -40,18 +40,6 @@
 <context>
     <name>DashboardPage</name>
     <message>
-        <location filename="module/str_mult/DashboardPage.qml" line="16"/>
-        <source>Stream Tool</source>
-        <oldsource>Stream Relay</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="module/caster_gui/DashboardPage.qml" line="16"/>
-        <source>Caster Service</source>
-        <oldsource>Koro Caster Service</oldsource>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="module/auth_gui/DashboardPage.qml" line="16"/>
         <source>User Management</source>
         <translation type="unfinished"></translation>
@@ -75,7 +63,6 @@
     <message>
         <location filename="module/auth_gui/DashboardPage.qml" line="76"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="76"/>
-        <location filename="module/nav_tool/DashboardPage.qml" line="76"/>
         <location filename="module/str_mult/DashboardPage.qml" line="76"/>
         <location filename="module/test_tool/DashboardPage.qml" line="76"/>
         <source>Stream</source>
@@ -84,15 +71,29 @@
     <message>
         <location filename="module/auth_gui/DashboardPage.qml" line="112"/>
         <location filename="module/caster_gui/DashboardPage.qml" line="112"/>
-        <location filename="module/nav_tool/DashboardPage.qml" line="112"/>
         <location filename="module/str_mult/DashboardPage.qml" line="112"/>
         <location filename="module/test_tool/DashboardPage.qml" line="112"/>
         <source>Option</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="module/caster_gui/DashboardPage.qml" line="16"/>
+        <source>Caster Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/str_mult/DashboardPage.qml" line="16"/>
+        <source>Stream Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="module/test_tool/DashboardPage.qml" line="16"/>
         <source>Test Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/test_tool/DashboardPage.qml" line="40"/>
+        <source>NTRIP Caster Performance Testing Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -102,8 +103,17 @@
     </message>
     <message>
         <location filename="module/nav_tool/DashboardPage.qml" line="40"/>
-        <location filename="module/test_tool/DashboardPage.qml" line="40"/>
-        <source>NTRIP Caster Performance Testing Tool</source>
+        <source>Coordinate Transformation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/nav_tool/DashboardPage.qml" line="76"/>
+        <source>NMEA0183 Converter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="module/nav_tool/DashboardPage.qml" line="112"/>
+        <source>Sky Plot Generator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -188,15 +198,13 @@
 <context>
     <name>ItemsFooter</name>
     <message>
-        <location filename="qml/global/ItemsFooter.qml" line="35"/>
-        <source>Hotload Window</source>
-        <oldsource>Hot Loader1</oldsource>
+        <location filename="qml/global/ItemsFooter.qml" line="25"/>
+        <source>Hotload Page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsFooter.qml" line="25"/>
-        <source>Hotload Page</source>
-        <oldsource>Hot Loader</oldsource>
+        <location filename="qml/global/ItemsFooter.qml" line="35"/>
+        <source>Hotload Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -213,13 +221,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="99"/>
-        <source>Stream Tool</source>
+        <location filename="qml/global/ItemsOriginal.qml" line="39"/>
+        <source>Nav Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="39"/>
-        <source>Nav Tool</source>
+        <location filename="qml/global/ItemsOriginal.qml" line="57"/>
+        <source>Caster Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -228,14 +236,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="119"/>
-        <source>Test Tool</source>
-        <oldsource>Ntrip Tool</oldsource>
+        <location filename="qml/global/ItemsOriginal.qml" line="99"/>
+        <source>Stream Tool</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="qml/global/ItemsOriginal.qml" line="57"/>
-        <source>Caster Service</source>
+        <location filename="qml/global/ItemsOriginal.qml" line="119"/>
+        <source>Test Tool</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -317,7 +324,6 @@
     <message>
         <location filename="module/str_mult/MonitorPage.qml" line="12"/>
         <source>Str Monitor</source>
-        <oldsource>str2str_mult</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>

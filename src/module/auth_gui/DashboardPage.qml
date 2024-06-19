@@ -13,7 +13,7 @@ FluScrollablePage {
     property var navigationView
 
 
-    title: qsTr("Caster Service")
+    title: qsTr("User Management")
 
     FluExpander{
         headerText: qsTr("Version and Description")

@@ -18,5 +18,8 @@
         <file>module/str_mult/MonitorPage.qml</file>
         <file>module/str_mult/OptionPage.qml</file>
         <file>module/caster_gui/DashboardPage.qml</file>
+        <file>module/test_tool/DashboardPage.qml</file>
+        <file>module/nav_tool/DashboardPage.qml</file>
+        <file>module/auth_gui/DashboardPage.qml</file>
     </qresource>
 </RCC>

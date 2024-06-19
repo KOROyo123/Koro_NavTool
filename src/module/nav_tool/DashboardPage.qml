@@ -13,7 +13,7 @@ FluScrollablePage {
     property var navigationView
 
 
-    title: qsTr("Caster Service")
+    title: qsTr("Nav Tool")
 
     FluExpander{
         headerText: qsTr("Version and Description")
@@ -37,7 +37,7 @@ FluScrollablePage {
         }
 
         FluText{
-            text: qsTr("Monitor")
+            text: qsTr("Coordinate Transformation")
             font: FluTextStyle.Subtitle
 
             anchors{
@@ -73,7 +73,7 @@ FluScrollablePage {
         }
 
         FluText{
-            text: qsTr("Stream")
+            text: qsTr("NMEA0183 Converter")
             font: FluTextStyle.Subtitle
 
             anchors{
@@ -101,7 +101,7 @@ FluScrollablePage {
 
         FluButton{
             onClicked: {
-                nav_view.push("qrc:/module/str_mult/OptionPage.qml")
+                nav_view.push("qrc:/module/str_mult/StreamPage.qml")
             }
             anchors{
                 fill: parent
@@ -109,7 +109,7 @@ FluScrollablePage {
         }
 
         FluText{
-            text: qsTr("Option")
+            text: qsTr("Sky Plot Generator")
             font: FluTextStyle.Subtitle
 
             anchors{
@@ -128,11 +128,10 @@ FluScrollablePage {
                 verticalCenter: parent.verticalCenter
             }
         }
-
-
-
-
     }
+
+
+
 
 
 }

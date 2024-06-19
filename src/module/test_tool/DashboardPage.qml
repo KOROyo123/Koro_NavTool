@@ -13,7 +13,7 @@ FluScrollablePage {
     property var navigationView
 
 
-    title: qsTr("Caster Service")
+    title: qsTr("Test Tool")
 
     FluExpander{
         headerText: qsTr("Version and Description")
@@ -37,7 +37,7 @@ FluScrollablePage {
         }
 
         FluText{
-            text: qsTr("Monitor")
+            text: qsTr("NTRIP Caster Performance Testing Tool")
             font: FluTextStyle.Subtitle
 
             anchors{

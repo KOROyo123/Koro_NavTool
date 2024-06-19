@@ -13,7 +13,7 @@ FluScrollablePage {
     property var navigationView
 
 
-    title: qsTr("str2str_mult")
+    title: qsTr("Stream Tool")
 
     FluExpander{
         headerText: qsTr("Version and Description")
